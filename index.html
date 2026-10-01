@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lettre d’information MDPI — Bibliothèques universitaires</title>
+    <meta
+      name="description"
+      content="Inscription à la lettre d’information ponctuelle MDPI destinée aux bibliothécaires universitaires en France."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="./index.html" aria-label="MDPI — Accueil">
+          <img
+            class="logo"
+            src="./assets/logos/MDPI-logo-White.svg"
+            alt="MDPI"
+            width="120"
+            height="35"
+          />
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="./index.html" aria-current="page">Inscription</a>
+          <a href="./science-ouverte.html">Science ouverte</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="brand">MDPI</p>
+        <h1>Lettre d’information pour bibliothécaires (2x par an)</h1>
+        <p class="lede">
+          Une lettre d’information ponctuelle, destinée aux bibliothèques
+          universitaires en France, sur la science ouverte, Scilit et la
+          scientométrie.
+        </p>
+      </div>
+    </section>
+
+    <main class="main">
+      <section class="section">
+        <img
+          class="section-icon"
+          src="./assets/icons/mail.svg"
+          alt=""
+          width="28"
+          height="28"
+        />
+        <h2>S’inscrire</h2>
+        <p>
+          Recevez occasionnellement des informations utiles pour les services
+          documentaires : bases bibliographiques ouvertes, indicateurs, outils
+          d’affiliation et contributions MDPI à la science ouverte. Aucun envoi
+          régulier — uniquement lorsque l’actualité le justifie.
+        </p>
+        <p>
+          Pour en savoir plus sur l’écosystème MDPI en science ouverte et
+          scientométrie, consultez la page
+          <a href="./science-ouverte.html">MDPI, science ouverte et scientométrie</a>.
+        </p>
+
+        <div class="form-panel">
+          <form id="signup-form" novalidate>
+            <div class="honeypot" aria-hidden="true">
+              <label for="company">Société</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="title">Civilité</label>
+              <select id="title" name="title" required>
+                <option value="">Sélectionner</option>
+                <option value="Mme">Mme</option>
+                <option value="M.">M.</option>
+                <option value="Dr">Dr</option>
+                <option value="Pr">Pr</option>
+              </select>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="firstname">Prénom</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <label for="lastname">Nom</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Adresse e-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <span>
+                J’accepte que MDPI enregistre mes coordonnées afin de
+                m’envoyer cette lettre d’information ponctuelle. Je peux me
+                désinscrire à tout moment.
+              </span>
+            </label>
+
+            <button class="btn btn-primary" type="submit" id="submit-btn">
+              <img
+                class="icon-inline"
+                src="./assets/icons/send.svg"
+                alt=""
+                width="18"
+                height="18"
+              />
+              S’inscrire
+            </button>
+
+            <div
+              id="form-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-tagline">Advancing Open Science</p>
+        <p class="footer-meta">
+          MDPI ·
+          <a href="https://www.mdpi.com/">mdpi.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var form = document.getElementById("signup-form");
+        var statusEl = document.getElementById("form-status");
+        var submitBtn = document.getElementById("submit-btn");
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function showStatus(type, message) {
+          statusEl.className = "form-status is-visible " + type;
+          statusEl.textContent = message;
+        }
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          if (form.company.value) {
+            showStatus(
+              "success",
+              "Merci. Votre inscription a bien été enregistrée."
+            );
+            form.reset();
+            return;
+          }
+
+          var title = form.title.value.trim();
+          var firstname = form.firstname.value.trim();
+          var lastname = form.lastname.value.trim();
+          var email = form.email.value.trim();
+          var consent = form.consent.checked;
+
+          if (!title || !firstname || !lastname || !email) {
+            showStatus(
+              "error",
+              "Veuillez renseigner tous les champs obligatoires."
+            );
+            return;
+          }
+
+          if (!emailRe.test(email)) {
+            showStatus("error", "Veuillez indiquer une adresse e-mail valide.");
+            return;
+          }
+
+          if (!consent) {
+            showStatus(
+              "error",
+              "Veuillez accepter le traitement de vos données pour vous inscrire."
+            );
+            return;
+          }
+
+          submitBtn.disabled = true;
+
+          try {
+            var response = await fetch("/.netlify/functions/signup", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                title: title,
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+              }),
+            });
+
+            var data = {};
+            try {
+              data = await response.json();
+            } catch (parseError) {
+              data = {};
+            }
+
+            if (!response.ok) {
+              showStatus(
+                "error",
+                data.error ||
+                  "L’inscription n’a pas pu être enregistrée. Réessayez plus tard."
+              );
+              return;
+            }
+
+            showStatus(
+              "success",
+              "Merci. Votre inscription a bien été enregistrée."
+            );
+            form.reset();
+          } catch (error) {
+            showStatus(
+              "error",
+              "Impossible de joindre le service d’inscription. Vérifiez votre connexion ou réessayez plus tard."
+            );
+          } finally {
+            submitBtn.disabled = false;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
