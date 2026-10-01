@@ -554,3 +554,45 @@ li {
 .site-footer a {
   color: var(--mdpi-blue-100);
 }
+
+.qr-badge {
+  display: none;
+}
+
+/* Only shown where the side gutter is wide enough not to cover content. */
+@media (min-width: 1200px) {
+  .qr-badge {
+    display: block;
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 10;
+    width: 150px;
+    background: var(--white);
+    border: 1px solid var(--mdpi-blue-100);
+    border-radius: var(--radius);
+    padding: 0.6rem;
+    box-shadow: 0 4px 16px rgba(1, 40, 95, 0.18);
+  }
+
+  .qr-badge p {
+    margin: 0.5rem 0 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--mdpi-blue-900);
+  }
+}
+
+@media (min-width: 1440px) {
+  .qr-badge {
+    width: 190px;
+  }
+}
+
+@media print {
+  .qr-badge {
+    display: none;
+  }
+}
