@@ -4,6 +4,7 @@ Site statique en français (Netlify) pour :
 
 1. **Inscription** à une lettre d’information ponctuelle destinée aux bibliothécaires universitaires en France (`index.html`)
 2. **Présentation** de MDPI dans l’écosystème science ouverte / scientométrie (`science-ouverte.html`)
+3. **Programme IOAP** d’accès ouvert institutionnel (`ioap.html`)
 
 Les inscriptions (civilité, prénom, nom, e-mail) sont enregistrées dans la [feuille Google Sheets](https://docs.google.com/spreadsheets/d/1m3S7B5XcnWAf1c7_fVGhpcxqvXTmMK2806ne0CN98pA/edit?usp=sharing) via une fonction Netlify et un Google Apps Script.
 
@@ -12,6 +13,7 @@ Les inscriptions (civilité, prénom, nom, e-mail) sont enregistrées dans la [f
 ```
 index.html
 science-ouverte.html
+ioap.html
 styles.css
 assets/logos/          # logos MDPI
 assets/icons/          # icônes MDPI
