@@ -34,9 +34,8 @@
         <p class="brand">MDPI</p>
         <h1>Science ouverte et scientométrie</h1>
         <p class="lede">
-          Au-delà de l’édition en accès ouvert, MDPI développe des infrastructures
-          ouvertes pour découvrir, classer et évaluer la production scientifique —
-          à l’usage des chercheurs, des éditeurs et des bibliothèques.
+          Au-delà de l’édition en accès ouvert, <strong>MDPI développe des infrastructures
+          ouvertes</strong> pour découvrir, classer et évaluer la production scientifique.
         </p>
       </div>
     </section>
@@ -60,13 +59,13 @@
           <li>
             <a href="#i3">
               <img class="icon-inline" src="./assets/icons/bar-chart.svg" alt="" />
-              Indicateurs I3 et I3/N
+              Scilit Indicateurs I3 et I3/N
             </a>
           </li>
           <li>
             <a href="#tcs">
               <img class="icon-inline" src="./assets/icons/school.svg" alt="" />
-              Top Cited Scholars
+              Scilit Top Cited Scholars (TCS)
             </a>
           </li>
           <li>
@@ -78,7 +77,7 @@
           <li>
             <a href="#ror">
               <img class="icon-inline" src="./assets/icons/network-node.svg" alt="" />
-              MDPI ROR Entity Search
+              MDPI ROR Entity Matching
             </a>
           </li>
         </ul>
@@ -94,10 +93,9 @@
         />
         <h2>MDPI, éditeur en accès ouvert</h2>
         <p>
-          MDPI est un éditeur scientifique basé à Bâle. L’ensemble de ses revues
-          est publié en accès ouvert sous licence Creative Commons (CC BY) :
-          les articles sont librement lisibles, réutilisables et citables, avec
-          attribution aux auteurs.
+          MDPI est un éditeur scientifique basé en Suisse avec d'importantes activités en Chine.
+          L’ensemble de ses revues est publié <strong>en accès ouvert sous licence Creative Commons (CC BY)</strong> :
+          les articles sont librement lisibles, réutilisables et citables, avec attribution aux auteurs.
         </p>
         <p>
           Le modèle repose sur un frais de traitement d’article (APC) payé
@@ -143,12 +141,11 @@
           </div>
         </div>
         <p>
-          Ces ordres de grandeur correspondent aux chiffres affichés sur
-          scilit.com ; ils évoluent au fur et à mesure de l’indexation.
+          Scilit maintient toute l'infrastructure nécessaire pour la collecte, le traitement et la gestion de métadonnées bibliographiques.
         </p>
         <div class="callout">
           <p>
-            Pour une bibliothèque universitaire, Scilit offre un point d’entrée
+            Pour les bibliothèques universitaires, Scilit offre un point d’entrée
             gratuit pour repérer la littérature, y compris l’accès ouvert et les
             preprints, sans barrière d’abonnement à la base elle-même.
           </p>
@@ -173,12 +170,12 @@
           width="28"
           height="28"
         />
-        <h2>Indicateurs I3 et I3/N</h2>
+        <h2>Scilit Indicateurs I3 et I3/N</h2>
         <p>
           Les Integrated Impact Indicators (I3 et I3/N) sont des indicateurs de
           revue calculés et publiés par Scilit. Ils s’appuient sur des classes
-          de percentiles de citations plutôt que sur une moyenne, ce qui les
-          rend plus sensibles à la distribution réelle des citations.
+          de percentiles de citations plutôt que sur une moyenne (comme par exemple le Impact Factor),
+          ce qui les rend plus sensibles à la distribution réelle des citations.
         </p>
         <h3>Pondération des percentiles</h3>
         <ul>
@@ -197,9 +194,14 @@
         <div class="callout">
           <p>
             Pour les bibliothèques, I3 et I3/N offrent une alternative sensible
-            à la distribution, complémentaire du facteur d’impact et du
+            à la distribution, complémentaire du Impact Factor et du
             CiteScore, y compris pour comparer des revues d’accès ouvert ou
             régionales.
+          </p>
+          <p>Scilit est moins selective que les autres bases de données bibliographiques,
+            ce qui lui permet de calculer des indicateurs pour un plus grand nombre de revues.
+            Cela permet également de calculer des indicateurs pour des revues d'accès ouvert, régionales,
+            publiées dans des pays en développement, ou publiées en d'autres langues que l'anglais.
           </p>
         </div>
         <div class="links-inline">
@@ -218,7 +220,7 @@
           width="28"
           height="28"
         />
-        <h2>Top Cited Scholars</h2>
+        <h2>Scilit Top Cited Scholars (TCS)</h2>
         <p>
           Depuis 2023, Scilit publie chaque année la liste Top Cited Scholars
           (TCS). Elle reconnaît des chercheurs dont les articles figurent parmi
@@ -269,27 +271,23 @@
         <p>
           Le jeu de données sur Hugging Face propose des configurations Parquet
           plates et hiérarchiques pour la navigation, la construction de graphes
-          et l’entraînement de modèles. Atlantis offre une exploration visuelle
-          appuyée sur les articles MDPI déjà étiquetés.
+          et l’entraînement de modèles. MDPI Atlantis offre une exploration visuelle
+          de la taxonomie MDPI appuyée sur les articles MDPI déjà étiquetés (~2M articles).
         </p>
         <div class="callout callout-note">
           <p>
             L’étiquetage du corpus MDPI avec ces concepts est en place. L’extension
-            à l’ensemble des publications Scilit est en cours et limitée par la
-            capacité de calcul ; aucune date n’est annoncée.
+            à l’ensemble des publications référencées par Scilit est en cours et limitée
+            par la capacité de calcul nécessaire à l'étiquetage des articles (~150,000 heures-GPU).
           </p>
         </div>
         <div class="links-inline">
           <a href="https://atlantis.mdpi.com/">
-            Atlantis (explorateur)
+            MDPI Atlantis (explorateur)
             <img class="icon-inline" src="./assets/icons/external-link.svg" alt="" />
           </a>
           <a href="https://huggingface.co/datasets/mdpi-di/taxonomy">
             huggingface.co/datasets/mdpi-di/taxonomy
-            <img class="icon-inline" src="./assets/icons/external-link.svg" alt="" />
-          </a>
-          <a href="https://openalex.org/">
-            openalex.org
             <img class="icon-inline" src="./assets/icons/external-link.svg" alt="" />
           </a>
         </div>
@@ -303,7 +301,7 @@
           width="28"
           height="28"
         />
-        <h2>MDPI ROR Entity Search</h2>
+        <h2>MDPI ROR Entity Matching</h2>
         <p>
           MDPI a publié une API ouverte pour associer des affiliations en texte
           libre à des identifiants ROR. Le service combine reconnaissance
@@ -317,15 +315,14 @@
             Benchmark interne (août 2026, score micro-F1) : moyenne sur
             12 jeux de données — MDPI 0.871 contre API ROR 0.730 ; sur six jeux
             annotés manuellement en externe — MDPI 0.860 contre API ROR 0.619.
-            Ces résultats sont internes et non une validation indépendante ;
-            les performances varient selon les jeux. OpenAlex et certaines
-            méthodes spécialisées restent en tête sur une partie des jeux.
           </p>
         </div>
         <p>
           Pour une bibliothèque, un meilleur appariement des affiliations
           améliore directement le décompte des publications institutionnelles et
-          le suivi des accords d’accès ouvert.
+          le suivi des accords d’accès ouvert. Cela permet également de calculer des
+          indicateurs scientométriques pertinents au niveau des institutions, des pays,
+          des régions, etc.
         </p>
         <div class="links-inline">
           <a href="https://ror.mdpi.com/">
